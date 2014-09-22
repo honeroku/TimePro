@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="org.honeroku.timepro" >
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -10,7 +11,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".app.ui.InitActivity"
+            android:name=".app.main.ui.InitActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,9 +20,34 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.ui.AttendanceActivity"
+            android:name=".app.main.ui.AttendanceActivity"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name=".app.plugin.ui.SettingActivity"
+            android:exported="true"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/plugin_name"
+            tools:ignore="ExportedActivity" >
+
+            <!-- this Intent filter allows the plug-in to be discovered by Locale -->
+            <intent-filter>
+                <action android:name="com.twofortyfouram.locale.intent.action.EDIT_SETTING" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".app.plugin.receiver.AttendanceReceiver"
+            android:exported="true"
+            android:process=":background"
+            tools:ignore="ExportedReceiver" >
+
+            <!-- this Intent filter allows the plug-in to discovered by Locale -->
+            <intent-filter>
+                <action android:name="com.twofortyfouram.locale.intent.action.FIRE_SETTING" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>
