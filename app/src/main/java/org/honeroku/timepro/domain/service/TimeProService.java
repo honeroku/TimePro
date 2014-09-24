@@ -4,9 +4,9 @@ import android.os.AsyncTask;
 
 import org.honeroku.timepro.domain.constraint.AccountConstraint;
 import org.honeroku.timepro.domain.entity.Account;
-import org.honeroku.timepro.event.ClockInEvent;
-import org.honeroku.timepro.event.ClockOutEvent;
-import org.honeroku.timepro.event.LoginEvent;
+import org.honeroku.timepro.domain.event.ClockInEvent;
+import org.honeroku.timepro.domain.event.ClockOutEvent;
+import org.honeroku.timepro.domain.event.LoginEvent;
 import org.honeroku.timepro.infrastructure.TimeProClient;
 
 public class TimeProService {

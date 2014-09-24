@@ -1,4 +1,4 @@
-package org.honeroku.timepro.event;
+package org.honeroku.timepro.domain.event;
 
 import org.honeroku.timepro.util.EventBus;
 

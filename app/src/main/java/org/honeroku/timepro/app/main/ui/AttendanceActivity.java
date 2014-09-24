@@ -11,8 +11,8 @@ import com.squareup.otto.Subscribe;
 import org.honeroku.timepro.R;
 import org.honeroku.timepro.domain.repository.AccountRepository;
 import org.honeroku.timepro.domain.service.TimeProService;
-import org.honeroku.timepro.event.ClockInEvent;
-import org.honeroku.timepro.event.ClockOutEvent;
+import org.honeroku.timepro.domain.event.ClockInEvent;
+import org.honeroku.timepro.domain.event.ClockOutEvent;
 import org.honeroku.timepro.util.EventBus;
 
 import butterknife.ButterKnife;

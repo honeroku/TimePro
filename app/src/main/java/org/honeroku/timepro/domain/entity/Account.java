@@ -11,6 +11,12 @@ public class Account {
         this.userId = userId;
     }
 
+    public static Account create(String domain, String userId, String password) {
+        Account account = new Account(domain, userId);
+        account.setPassword(password);
+        return account;
+    }
+
     public String getDomain() {
         return domain;
     }

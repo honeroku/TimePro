@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 
 import org.honeroku.timepro.domain.constraint.AccountConstraint;
 import org.honeroku.timepro.domain.entity.Account;
-import org.honeroku.timepro.domain.factory.AccountFactory;
 
 public class AccountRepository {
 
@@ -33,7 +32,7 @@ public class AccountRepository {
         if (domain == null || userId == null || password == null) {
             return null;
         }
-        return AccountFactory.create(domain, userId, password);
+        return Account.create(domain, userId, password);
     }
 
     private static SharedPreferences getSharedPreferences(Context context) {

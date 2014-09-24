@@ -1,4 +1,4 @@
-package org.honeroku.timepro.event;
+package org.honeroku.timepro.domain.event;
 
 public class ClockOutEvent extends Event {
 

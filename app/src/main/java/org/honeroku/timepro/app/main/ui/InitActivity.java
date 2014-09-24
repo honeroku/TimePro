@@ -13,8 +13,7 @@ import org.honeroku.timepro.R;
 import org.honeroku.timepro.domain.constraint.AccountConstraint;
 import org.honeroku.timepro.domain.entity.Account;
 import org.honeroku.timepro.domain.service.TimeProService;
-import org.honeroku.timepro.event.LoginEvent;
-import org.honeroku.timepro.domain.factory.AccountFactory;
+import org.honeroku.timepro.domain.event.LoginEvent;
 import org.honeroku.timepro.domain.repository.AccountRepository;
 import org.honeroku.timepro.util.EventBus;
 
@@ -47,7 +46,7 @@ public class InitActivity extends Activity {
 
     @OnClick(R.id.login)
     public void onClickLogin() {
-        Account account = AccountFactory.create(
+        Account account = Account.create(
                 timeproDomainView.getText().toString(),
                 userIdView.getText().toString(),
                 passwordView.getText().toString()
