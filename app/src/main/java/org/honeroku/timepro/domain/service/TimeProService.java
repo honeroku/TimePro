@@ -9,9 +9,9 @@ import org.honeroku.timepro.event.ClockOutEvent;
 import org.honeroku.timepro.event.LoginEvent;
 import org.honeroku.timepro.infrastructure.TimeProClient;
 
-public class TimeProClientService {
+public class TimeProService {
 
-    private static final String TAG = TimeProClientService.class.getName();
+    private static final String TAG = TimeProService.class.getName();
 
     public static void login(final Account account) {
         assert new AccountConstraint().isSatisfiedBy(account);

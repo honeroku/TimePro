@@ -1,4 +1,4 @@
-package org.honeroku.timepro.app.ui;
+package org.honeroku.timepro.app.main.ui;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,7 +10,7 @@ import com.squareup.otto.Subscribe;
 
 import org.honeroku.timepro.R;
 import org.honeroku.timepro.domain.repository.AccountRepository;
-import org.honeroku.timepro.domain.service.TimeProClientService;
+import org.honeroku.timepro.domain.service.TimeProService;
 import org.honeroku.timepro.event.ClockInEvent;
 import org.honeroku.timepro.event.ClockOutEvent;
 import org.honeroku.timepro.util.EventBus;
@@ -43,14 +43,14 @@ public class AttendanceActivity extends Activity {
     public void onClickClockIn() {
         setEnabled(false);
 
-        TimeProClientService.clockIn(AccountRepository.load(this));
+        TimeProService.clockIn(AccountRepository.load(this));
     }
 
     @OnClick(R.id.clock_out)
     public void onClickClockOut() {
         setEnabled(false);
 
-        TimeProClientService.clockOut(AccountRepository.load(this));
+        TimeProService.clockOut(AccountRepository.load(this));
     }
 
     @Subscribe
