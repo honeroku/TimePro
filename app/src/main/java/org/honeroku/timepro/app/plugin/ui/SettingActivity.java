@@ -8,20 +8,20 @@ import org.honeroku.timepro.R;
 import org.honeroku.timepro.app.plugin.bundle.BundleManager;
 import org.honeroku.timepro.app.plugin.bundle.BundleScrubber;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 
 public class SettingActivity extends AbstractPluginActivity {
 
-    @InjectView(R.id.attendance) Switch attendanceSwitch;
+    @Bind(R.id.attendance) Switch attendanceSwitch;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
 
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         BundleScrubber.scrub(getIntent());
 

@@ -9,27 +9,27 @@ import android.widget.Toast;
 import com.squareup.otto.Subscribe;
 
 import org.honeroku.timepro.R;
-import org.honeroku.timepro.domain.repository.AccountRepository;
-import org.honeroku.timepro.domain.service.TimeProService;
 import org.honeroku.timepro.domain.event.ClockInEvent;
 import org.honeroku.timepro.domain.event.ClockOutEvent;
+import org.honeroku.timepro.domain.repository.AccountRepository;
+import org.honeroku.timepro.domain.service.TimeProService;
 import org.honeroku.timepro.util.EventBus;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import butterknife.OnClick;
 
 public class AttendanceActivity extends Activity {
 
-    @InjectView(R.id.clock_in)  Button clockInButton;
-    @InjectView(R.id.clock_out) Button clockOutButton;
+    @Bind(R.id.clock_in)        Button clockInButton;
+    @Bind(R.id.clock_out) Button clockOutButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attendance);
 
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         EventBus.getInstance().register(this);
 

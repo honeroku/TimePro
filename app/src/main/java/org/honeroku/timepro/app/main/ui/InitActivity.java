@@ -12,29 +12,29 @@ import com.squareup.otto.Subscribe;
 import org.honeroku.timepro.R;
 import org.honeroku.timepro.domain.constraint.AccountConstraint;
 import org.honeroku.timepro.domain.entity.Account;
-import org.honeroku.timepro.domain.service.TimeProService;
 import org.honeroku.timepro.domain.event.LoginEvent;
 import org.honeroku.timepro.domain.repository.AccountRepository;
+import org.honeroku.timepro.domain.service.TimeProService;
 import org.honeroku.timepro.util.EventBus;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import butterknife.OnClick;
 
 
 public class InitActivity extends Activity {
 
-    @InjectView(R.id.timepro_domain) TextView timeproDomainView;
-    @InjectView(R.id.user_id)        TextView userIdView;
-    @InjectView(R.id.password)       TextView passwordView;
-    @InjectView(R.id.login)          Button   loginButton;
+    @Bind(R.id.timepro_domain) TextView timeproDomainView;
+    @Bind(R.id.user_id)  TextView userIdView;
+    @Bind(R.id.password) TextView passwordView;
+    @Bind(R.id.login)    Button   loginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_init);
 
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         EventBus.getInstance().register(this);
 
